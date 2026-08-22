@@ -1,6 +1,6 @@
 #!/user/bin/env groovy
 
 def call() {
-    echo 'testing the application...'
+    echo "testing the application for branch $BRANCH_NAME..."
     sh 'mvn test'
 }
