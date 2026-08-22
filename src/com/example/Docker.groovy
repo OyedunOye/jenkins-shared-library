@@ -1,4 +1,4 @@
-#!/user/bin/env groovy
+#!/usr/bin/env groovy
 package com.example
 
 class Docker implements Serializable {
@@ -9,7 +9,7 @@ class Docker implements Serializable {
     }
 
     def buildDockerImage (String imageName) {
-        script.echo "building the docker image for branch '${script.BRANCH_NAME}'..."
+        script.echo "building the docker image for branch '${script.env.BRANCH_NAME}'..."
         script.sh "docker build -t $imageName ."
     }
 
@@ -21,7 +21,7 @@ class Docker implements Serializable {
     }
 
     def dockerPushImage(String imageName) {
-        script.echo "pushing the docker image for branch '${script.BRANCH_NAME}' to docker private repository..."
+        script.echo "pushing the docker image for branch '${script.env.BRANCH_NAME}' to docker private repository..."
         script.sh "docker build -t $imageName ."
     }
 }
