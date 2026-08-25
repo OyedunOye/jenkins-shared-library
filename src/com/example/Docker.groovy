@@ -22,6 +22,6 @@ class Docker implements Serializable {
 
     def dockerPushImage(String imageName) {
         script.echo "pushing the docker image for branch '${script.env.BRANCH_NAME}' to docker private repository..."
-        script.sh "docker push $imageName ."
+        script.sh "docker push $imageName"
     }
 }
